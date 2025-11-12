@@ -1,0 +1,22 @@
+services:
+  mcpo:
+    image: ghcr.io/open-webui/mcpo:main # mcpo 공식 이미지를 사용합니다.
+    container_name: mcpo
+    restart: unless-stopped
+    # ports:
+    #   - '8000:8000' # 호스트의 8000번 포트를 컨테이너의 8000번 포트에 연결합니다.
+    volumes:
+      - ./config.json:/app/config.json:ro # 설정 파일을 컨테이너에 마운트합니다.
+      - ./logs:/app/logs # 로그 디렉토리를 마운트합니다.
+      - ./data:/app/data # 데이터 디렉토리를 마운트합니다.
+      - ./.uv_cache:/app/.uv_cache # uv 캐시를 마운트합니다.
+      - ./.npm:/app/.npm # npm 캐시를 마운트합니다.
+    environment:
+      - MCPO_API_KEY=${MCPO_API_KEY} # .env 파일에서 API 키를 가져옵니다.
+    command: ["--config", "/app/config.json"] # config.json을 사용하여 mcpo를 실행합니다.
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
