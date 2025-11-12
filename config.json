@@ -12,7 +12,7 @@
       "command": "npx",
       "args": ["-y", "@notionhq/notion-mcp-server"],
       "env": {
-        "NOTION_TOKEN": 'docker-compose env'
+        "NOTION_TOKEN": "docker-compose env will replace this"
       }
     }
   }
