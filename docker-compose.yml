@@ -18,7 +18,11 @@ services:
     command: ["--config", "/app/config.json"] # config.json을 사용하여 mcpo를 실행합니다.
     networks:
       - dokploy-network
+      - mcpo-network
 
 networks:
   dokploy-network:
     external: true
+  mcpo-network:
+    name: mcpo-network
+    driver: bridge
