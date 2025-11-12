@@ -13,7 +13,7 @@ services:
       - ./.npm:/app/.npm # npm 캐시를 마운트합니다.
     environment:
       - MCPO_API_KEY=${MCPO_API_KEY} # .env 파일에서 API 키를 가져옵니다.
-      - NOTION_TOKEN=${NOTION_TOKEN}
+      - NOTION_API_TOKEN=${NOTION_API_TOKEN}
     command: ["--config", "/app/config.json"] # config.json을 사용하여 mcpo를 실행합니다.
     networks:
       - dokploy-network
