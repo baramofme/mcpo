@@ -10,11 +10,17 @@
     },
     "notion": {
       "command": "npx",
-      "args": ["-y", "@suekou/mcp-notion-server"]
+      "args": ["-y", "@suekou/mcp-notion-server"],
+      "env": {
+        "NOTION_API_TOKEN": 'docker-composeenv'
+      }
     },
     "notionApi": {
       "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"]
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": 'docker-composeenv'
+      }
     }
   }
 }
