@@ -8,12 +8,12 @@
       "command": "uvx",
       "args": ["mcp-server-time", "--local-timezone=America/New_York"]
     },
-    "notionApi": {
+    "notion": {
       "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "args": ["-y", "@suekou/mcp-notion-server"],
       "env": {
-        "NOTION_TOKEN": "docker-compose env will replace this"
+        "NOTION_API_TOKEN": "your-integration-token"
       }
-    }
+  }
   }
 }
